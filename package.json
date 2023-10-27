@@ -1,0 +1,19 @@
+{
+  "name": "flow-demo",
+  "version": "1.0.0",
+  "description": "User maintenance screen using Flowbite theme (Tailwind CSS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@office:tahsin-hasan-m4/flow-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "flowbite": "^2.0.0"
+  }
+}
