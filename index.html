@@ -1,22 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flowbite Project</title>
-  <link rel="stylesheet" href="node_modules/flowbite/dist/flowbite.min.css">
-</head>
-<body>
-  <h1>This is a Flowbite project</h1>
 
-  <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
-  <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Alternative</button>
-  <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Dark</button>
-  <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Light</button>
-  <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button>
-  <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Red</button>
-  <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Yellow</button>
-  <button type="button" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Purple</button>
-  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>User Maintenance</title>
+    <link rel="stylesheet" href="node_modules/flowbite/dist/flowbite.min.css">
+    <script src="node_modules/flowbite/dist/flowbite.js"></script>
+</head>
+
+<body>
+    <nav class="bg-white p-4 shadow-lg shadow-blue">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-sans text-blue-700 flex px-12 items-center">
+                <a href="#">User</a>
+            </h1>
+            <div class="flex items-center space-x-4 px-12">
+                <div class="relative text-gray-600">
+                    <input type="search" name="search" placeholder="Search" class="bg-gray-100 h-6 px-3 text-sm pr-8 py-3 rounded-full focus:outline-none">
+                    <button type="submit" class="absolute right-0 top-0 mt-1 mr-1">
+                    </button>
+                </div>
+                <span class="text-blue-700 text-sm "><a href="#">Add</a></span>
+                <span class="text-blue-700 text-sm"><a href="#">Update</a></span>
+                <span class="text-blue-700 text-sm"><a href="#">Actions</a></span>
+            </div>
+        </div>
+    </nav>
+
+    <div id="accordion-collapse" class="container mx-auto mt-10 bg-gray-50" data-accordion="collapse">
+        <h2 id="accordion-collapse-heading-1">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+                <span>User</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-collapse-body-1" class="hidden mt-6 p-6 rounded" aria-labelledby="accordion-collapse-heading-1">
+            <form>
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div>
+                        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
+                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md" placeholder="John" required>
+                    </div>
+                    <div>
+                        <label for "last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product</label>
+                        <select id="default" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md ">
+                        <option selected>Choose a country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="FR">France</option>
+                        <option value="DE">Germany</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="company " class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Company</label>
+                        <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg" placeholder=" Doe " required>
+                    </div>
+                    <div>
+                        <label for="phone " class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Phone number</label>
+                        <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md" placeholder=" Doe " required>
+                    </div>
+                    <div>
+                        <label for="website " class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Website URL</label>
+                        <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md" placeholder=" Doe " required>
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Checked state</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="website " class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Website URL</label>
+                        <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md" placeholder=" Doe " required>
+                    </div>
+                    <div>
+                        <label for "last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product</label>
+                        <select id="default" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md ">
+                        <option selected>Choose a country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="FR">France</option>
+                        <option value="DE">Germany</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
+                    <ul class="w-48 text-sm font-medium text-gray-900">
+                        <li>
+                            <div class="flex items-center pl-3">
+                                <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                <label for="list-radio-license" class="w-full  ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Driver License </label>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="flex items-center pl-3">
+                                <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                <label for="list-radio-id" class="w-full  ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">State ID</label>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="flex items-center pl-3">
+                                <input id="list-radio-millitary" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                <label for="list-radio-millitary" class="w-full  ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">US Millitary</label>
+                            </div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="accordion-flush" class="container mx-auto mt-10 bg-gray-50" data-accordion="collapse">
+        <h2 id="accordion-flush-heading-1">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                <span>Task</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-flush-body-1" class="hidden mt-6 p-6 rounded" aria-labelledby="accordion-flush-heading-1">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                ASSIGNED TO
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                STATUS
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                DEADLINE
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                TASK TYPE
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                TASK
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                ACTION
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Apple MacBook Pro 17"
+                            </th>
+                            <td class="px-6 py-4">
+                                Silver
+                            </td>
+                            <td class="px-6 py-4">
+                                Laptop
+                            </td>
+                            <td class="px-6 py-4">
+                                $2999
+                            </td>
+                            <td class="px-6 py-4">
+                                $2999
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                        <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Microsoft Surface Pro
+                            </th>
+                            <td class="px-6 py-4">
+                                White
+                            </td>
+                            <td class="px-6 py-4">
+                                Laptop PC
+                            </td>
+                            <td class="px-6 py-4">
+                                $1999
+                            </td>
+                            <td class="px-6 py-4">
+                                $2999
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+
+
+
 </body>
+
 </html>
